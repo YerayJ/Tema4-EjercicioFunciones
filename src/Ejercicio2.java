@@ -10,7 +10,7 @@ public class Ejercicio2 {
         // pasados. En la i comprobamos cual es el número más pequeño de los dos y le
         // sumamos uno para que empiecen por el número siguiente. En cambio en el rango
         // máximo será comprobando cual de los dos es más grande.
-        for (int i = (num1 < num2 ? num1 : num2) + 1; i < (num1 > num2 ? num1 : num2); i++) {
+        for (int i = (num1 < num2 ? num1 : num2); i < (num1 > num2 ? num1 : num2) + 1; i++) {
             // Imprimimos el mensaje por cada bucle
             System.out.println(i);
         }
