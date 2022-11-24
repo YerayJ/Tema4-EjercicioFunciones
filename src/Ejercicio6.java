@@ -5,15 +5,20 @@ public class Ejercicio6 {
     static boolean esPrimo(int num) {
         // Declaramos la variable esVocal en true
         boolean esPrimo = true;
-        // Creamos un if que si el resto del num da 0 el número es
+        // Comprobamos que si nos dan el uno sea directamente falso
+        if (num == 1) {
+            esPrimo = false;
+        }
+        // Creamos un bucle que vaya recorriendo desde el dos al número.
         for (int i = 2; i < num; i++) {
+            // Si un número es divisible entre nuestro número no será primo
             if (num % i == 0) {
-                // Devolvemos la variable booleana
-                
+                // Aignamos a la variable booleana false
                 esPrimo = false;
+                // Salimos del bucle, ya que no hay nada más que comprobar
                 break;
             }
-        } 
+        } // Devolvemos la variable primo
         return esPrimo;
     }
 
@@ -29,7 +34,7 @@ public class Ejercicio6 {
         num = key.nextInt();
 
         // Imprimimos resultado llamando a la función. Hago un operador ternario para
-        // que si me devuelve true imprima que es vocal.
+        // que si me devuelve true imprima que es primo.
         System.out.println((esPrimo(num) == true ? "Es primo" : "No es primo"));
 
     }
