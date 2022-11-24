@@ -5,12 +5,11 @@ public class Ejercicio2 {
 
     // Creamos función eco y creamos como parámetro de entrada la variable veceseco
     // en int
+    // Precondición el número num1 pasado tiene que ser menor que el segundo
     static void numeroscomprendidos(int num1, int num2) {
         // En este bucle imprimimos todos los números comprendidos entre dos números
-        // pasados. En la i comprobamos cual es el número más pequeño de los dos y le
-        // sumamos uno para que empiecen por el número siguiente. En cambio en el rango
-        // máximo será comprobando cual de los dos es más grande.
-        for (int i = (num1 < num2 ? num1 : num2); i < (num1 > num2 ? num1 : num2) + 1; i++) {
+        // pasados.
+        for (int i = num1; i < num2; i++) {
             // Imprimimos el mensaje por cada bucle
             System.out.println(i);
         }
@@ -28,8 +27,14 @@ public class Ejercicio2 {
         num1 = key.nextInt();
         num2 = key.nextInt();
 
-        // Llamamos a la función y le pasamos como parámetro la variable creada
-        numeroscomprendidos(num1, num2);
-
+        // Hacemos un if que comprobamos cual de los dos es más pequeño y llamamos a la función
+        if (num1 < num2) {
+            // Pasamos primero num1
+            numeroscomprendidos(num1, num2);
+        } else { // Pasamos primero num2
+            numeroscomprendidos(num2, num1);
+        }
+        // Cerramos el escaner
+        key.close();
     }
 }

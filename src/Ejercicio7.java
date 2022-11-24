@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio6 {
+public class Ejercicio7 {
     // Creamos una función de tipo booleano y le pasaremos una String
     static boolean esPrimo(int num) {
         // Declaramos la variable esVocal en true
@@ -22,6 +22,18 @@ public class Ejercicio6 {
         return esPrimo;
     }
 
+    static int divisoresPrimos(int num) {
+        int contador = 0;
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                if (esPrimo(i)) {
+                    contador++;
+                }
+            }
+        }
+        return contador;
+    }
+
     public static void main(String[] args) {
         // Creamos variables
         int num;
@@ -33,10 +45,9 @@ public class Ejercicio6 {
         System.out.println("Deme un número: ");
         num = key.nextInt();
 
-        // Imprimimos resultado llamando a la función. Hago un operador ternario para
-        // que si me devuelve true imprima que es primo.
-        System.out.println((esPrimo(num) == true ? "Es primo" : "No es primo"));
-
+        // Imprimimos resultado
+        System.out.println("El número de divisores primos de " + num + " es " + divisoresPrimos(num));
+        
         // Cerramos escaner
         key.close();
     }
